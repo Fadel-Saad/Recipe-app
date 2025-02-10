@@ -11,30 +11,20 @@ export default function SideBar() {
 
   function DesktopSidebar() {
     return (
-      <div className="p-3 md:p-10 border-r min-h-screen w-24 md:w-64 hidden sm:block">
-        <div className="flex flex-col gap-20 sticky top-10 left-0">
-          <div className="w-full">
-            <img
-              src="/logo.svg"
-              alt="logo"
-              className="md:block hidden"
-            />
-            <img
-              src="/mobile-logo.svg"
-              alt="logo"
-              className="md:hidden block"
-            />
+      <div className=" p-3 md:p-10 border-r border-r-gray-200 min-h-screen w-24 md:w-64 hidden sm:block">
+        <div className="flex flex-col sm:gap-12 md:gap-20 sticky top-10 left-0">
+          <div className="w-[80%] mx-auto">
+            <img src="/Recipe Haven.png" alt="logo" className="md:block hidden rounded-full" />
+            <img src="/Recipe Haven.png" alt="logo" className="md:hidden block rounded-full" />
           </div>
-          <ul className="flex flex-col items-center md:items-start gap-8">
-            <Link to={"/"} className="flex gap-1">
+          <ul className="flex flex-col  items-center md:items-start gap-8">
+            <Link to={"/"} className="flex gap-1 md:ml-10">
               <Home size={"24"} />
               <span className="font-bold hidden md:block">Home</span>
             </Link>
-            <Link to={"/favorites"} className="flex gap-1">
+            <Link to={"/favorites"} className="flex gap-1 md:ml-10">
               <Heart size={"24"} />
-              <span className="font-bold hidden md:block">
-                Favorites
-              </span>
+              <span className="font-bold hidden md:block">Favorites</span>
             </Link>
           </ul>
         </div>
