@@ -1,4 +1,4 @@
-import SideBar from "./components/Sidebar";
+import SideBar from "./components/SideBar";
 import FavoritesPage from "./pages/FavoritesPage";
 import HomePage from "./pages/HomePage";
 import { Route, Routes } from "react-router-dom";

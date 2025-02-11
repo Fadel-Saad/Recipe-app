@@ -11,7 +11,7 @@ export default function HomePage({ favorites, setFavorites, onAddFavorites, onDe
 
   useEffect(
     function () {
-      // const controller = new AbortController();
+      const controller = new AbortController();
 
       async function fetchRecipes() {
         try {
@@ -25,6 +25,7 @@ export default function HomePage({ favorites, setFavorites, onAddFavorites, onDe
                   headers: {
                     "x-api-key": APIKey,
                   },
+                  signal: controller.signal,
                 }
               )
             : await fetch(
@@ -50,9 +51,9 @@ export default function HomePage({ favorites, setFavorites, onAddFavorites, onDe
 
       fetchRecipes();
 
-      // return function () {
-      //   controller.abort();
-      // };
+      return function () {
+        controller.abort();
+      };
     },
     [query]
   );
